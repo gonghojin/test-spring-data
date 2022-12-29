@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodb:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=1234
+      - MONGO_INITDB_DATABASE=mydb
+      
+  es-singlenode:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.3
+    container_name: es-singlenode
+    environment:
+      - xpack.security.enabled=false
+      - node.name=single-node
+      - cluster.name=es-singlenode-c
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - es-bridge
+networks:
+  es-bridge:
+    driver: bridge

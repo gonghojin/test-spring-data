@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'org.gongdel'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':common-api')
+    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+    implementation 'org.apache.commons:commons-lang3:3.9'
+}
+
+test {
+    useJUnitPlatform()
+}

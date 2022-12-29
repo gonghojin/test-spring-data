@@ -1,0 +1,6 @@
+rootProject.name = 'test-data-jpa'
+include 'common-api'
+include 'mongodb-api'
+include 'es-api'
+include 'core-api'
+

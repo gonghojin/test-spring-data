@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: 1234
+      database: mydb
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+

@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'org.gongdel'
+version '1.0-SNAPSHOT'
+
+bootJar.enabled = false
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.data:spring-data-commons:3.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.gongdel'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':common-api') // 컴파일 시 common-api project 로딩
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.apache.commons:commons-lang3:3.9'
+//    runtimeOnly 'com.h2database:h2'
+}
+
+test {
+    useJUnitPlatform()
+}
